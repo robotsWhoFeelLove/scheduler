@@ -22,7 +22,7 @@ function Schedule() {
         }
       });
     });
-    tempBands.sort((a, b) => a.index - b.index);
+    tempBands.sort((a, b) => a.time - b.time);
     setLocalBands(tempBands);
   }, []);
 
