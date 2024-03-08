@@ -35,7 +35,7 @@ function Selector() {
   }
 
   function isEmpty() {
-    return Object.values(schedule.Friday).filter((el) => el != null) + Object.values(schedule.Saturday).filter((el) => el != null) == 0;
+    return Object.values(scheduler.Friday).filter((el) => el != null) + Object.values(scheduler.Saturday).filter((el) => el != null) == 0;
   }
 
   function goToSchedule() {
