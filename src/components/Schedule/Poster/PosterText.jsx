@@ -1,4 +1,4 @@
-import { filterBands, getTime } from "../../utils/functions";
+import { filterBands, getTime } from "../../../utils/functions";
 
 function PosterText({ localBands, day }) {
   return (

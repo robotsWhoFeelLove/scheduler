@@ -1,13 +1,12 @@
-import poster from "../..//assets/poster2.jpeg";
-import { getTime, filterBands } from "../../utils/functions";
-import PosterText from "./PosterText";
-import NavBar from "../../utils/NavBar.jsx";
+import poster from "../../../assets/poster2.jpeg";
+import { getTime, filterBands } from "../../../utils/functions.js";
+import PosterText from "./PosterText.jsx";
+import NavBar from "../../../utils/NavBar.jsx";
 import OptionsPoster from "./OptionsPoster.jsx";
 
 function Poster({ localBands }) {
   return (
     <>
-      <NavBar Options={OptionsPoster} />
       <div className="h-[100vh]  flex justify-center p-2">
         <div id="poster" className="h-fit flex flex-col items-center justify-center border-4 bg-[#1cb6dc]">
           <div className="">

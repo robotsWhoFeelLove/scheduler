@@ -16,3 +16,8 @@ export function filterTime(bandArr, timeMin, day, timePeriod = 0) {
     return band.time >= timeMin && band.time <= timeMin + timePeriod && band.day == day;
   });
 }
+
+export function cloneThing(thing) {
+  let newThing = JSON.parse(JSON.stringify(thing));
+  return newThing;
+}
