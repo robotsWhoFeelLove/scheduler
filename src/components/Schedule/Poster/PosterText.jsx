@@ -8,13 +8,13 @@ function PosterText({ localBands, day }) {
         <>
           {filterBands(localBands, day).map((band) => {
             return (
-              <div key={band.name}>
-                <div className="flex gap-3">
-                  <div className={"text-xs " + (day == "Saturday" && "order-last")}>{getTime(band.time)}</div>
-                  <div className="text-xs">{band.name}</div>
+              <div key={band.name} className={"flex flex-col " + (day == "Friday" && " items-end")}>
+                <div className="text-xs ">{band.name}</div>
+
+                <div className="flex gap-1 items-center">
+                  <div className={"text-[6pt]  -mt-1 " + (day == "Friday" && " text-end")}>{"@" + band.venue}</div>
+                  <div className={"text-[6pt]  -mt-1 " + (day == "Saturday" && "order-last")}>{getTime(band.time)}</div>
                 </div>
-                <div className={"text-xs -mt-1 " + (day == "Friday" && " text-end")}>{"@" + band.venue}</div>
-                <div></div>
               </div>
             );
           })}
