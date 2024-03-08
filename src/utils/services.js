@@ -27,16 +27,22 @@ export async function createBlob(item, callback) {
 }
 
 export async function sharePoster(url) {
-  const blob = await (await fetch(url)).blob();
-  const filesArr = [new File([blob], "MyLineup.png", { type: blob.type })];
+  const filesArr = await convertToBlob(url);
+
   try {
-    await navigator.share({
+    navigator.share({
       files: filesArr,
     });
     console.log("Shared successfully");
   } catch (err) {
     console.error("error:", err.message);
   }
+}
+
+async function convertToBlob(url) {
+  const blob = await (await fetch(url)).blob();
+  const filesArr = [new File([blob], "MyLineup.png", { type: blob.type })];
+  return filesArr;
 }
 
 export async function downloadPoster(url) {
