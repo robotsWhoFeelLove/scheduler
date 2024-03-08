@@ -13,7 +13,7 @@ function PosterText({ localBands, day }) {
                   <div className={"text-xs " + (day == "Saturday" && "order-last")}>{getTime(band.time)}</div>
                   <div className="text-xs">{band.name}</div>
                 </div>
-                <div className={"text-xs -mt-1" + (day == "Friday" && " text-end")}>{"@" + band.venue}</div>
+                <div className={"text-xs -mt-1 " + (day == "Friday" && " text-end")}>{"@" + band.venue}</div>
                 <div></div>
               </div>
             );
