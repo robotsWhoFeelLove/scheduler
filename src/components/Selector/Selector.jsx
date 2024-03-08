@@ -57,7 +57,7 @@ function Selector() {
         <div
           className={
             "w-full btn btn-outline my-2 " +
-            (Object.values(schedule.Friday).filter((el) => el != null) + Object.values(schedule.Saturday).filter((el) => el != null) == 0 &&
+            (Object.values(scheduler.Friday).filter((el) => el != null) + Object.values(scheduler.Saturday).filter((el) => el != null) == 0 &&
               "bg-slate-300")
           }
           onClick={goToSchedule}
