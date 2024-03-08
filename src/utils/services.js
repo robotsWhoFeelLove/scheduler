@@ -21,14 +21,15 @@ export async function createImage(item, callback) {
 }
 
 export async function createBlob(item, callback) {
-  toBlob(document.getElementById(item)).then(function (blob) {
+  await toBlob(document.getElementById(item));
+  await toBlob(document.getElementById(item)).then(function (blob) {
     callback(blob);
   });
 }
 
-export async function sharePoster(url) {
-  const filesArr = await convertToBlob(url);
-
+export async function sharePoster(blob) {
+  //const filesArr = await convertToBlob(url);
+  const filesArr = [new File([blob], "MyLineup.png", { type: blob.type })];
   try {
     navigator.share({
       files: filesArr,

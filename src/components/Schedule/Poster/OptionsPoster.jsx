@@ -7,6 +7,10 @@ function OptionsPoster({ setter }) {
     createImage("poster", callback);
   }
 
+  function handleShare() {
+    createBlob("poster", sharePoster);
+  }
+
   return (
     <div className="mr-2 flex items-center">
       <div onClick={() => setter("schedule")} className=" md:flex btn btn-sm btn-outline text-white bg-[#00b3f0]">
@@ -16,7 +20,7 @@ function OptionsPoster({ setter }) {
         Share
       </div>
 
-      <div onClick={() => handleDownload(sharePoster)} className="md:hidden  text-white mt-1 cursor-pointer">
+      <div onClick={() => handleShare()} className="md:hidden  text-white mt-1 cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40" x="0px" y="0px" width="40px">
           <g data-name="Layer 10">
             <path
