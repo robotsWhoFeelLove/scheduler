@@ -1,4 +1,4 @@
-import { toPng } from "html-to-image";
+import { toPng, toBlob } from "html-to-image";
 import download from "downloadjs";
 
 export async function shareSchedule(url) {
@@ -20,12 +20,19 @@ export async function createImage(item, callback) {
   });
 }
 
+export async function createBlob(item, callback) {
+  toBlob(document.getElementById(item)).then(function (blob) {
+    callback(blob);
+  });
+}
+
 export async function sharePoster(url) {
+  const blob = await (await fetch(url)).blob();
+  const filesArr = [new File([blob], "MyLineup.png", { type: blob.type, lastModified: new Date().getTime() })];
   try {
     await navigator.share({
-      //   title: " My Poster",
       //   text: "Here's my lineup for the festival.",
-      files: [url],
+      files: filesArr,
     });
     console.log("Shared successfully");
   } catch (err) {

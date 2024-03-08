@@ -1,5 +1,5 @@
 import download from "downloadjs";
-import { sharePoster, createImage, downloadPoster } from "../../../utils/services.js";
+import { sharePoster, createImage, downloadPoster, createBlob } from "../../../utils/services.js";
 import share from "../../../assets/share.svg";
 
 function OptionsPoster({ setter }) {
