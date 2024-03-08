@@ -15,7 +15,7 @@ export async function shareSchedule(url) {
 }
 
 export async function createImage(item, callback) {
-  toPng(document.getElementById(item)).then(function (dataUrl) {
+  await toPng(document.getElementById(item)).then(function (dataUrl) {
     callback(dataUrl);
   });
 }
