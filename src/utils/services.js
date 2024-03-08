@@ -28,10 +28,9 @@ export async function createBlob(item, callback) {
 
 export async function sharePoster(url) {
   const blob = await (await fetch(url)).blob();
-  const filesArr = [new File([blob], "MyLineup.png", { type: blob.type, lastModified: new Date().getTime() })];
+  const filesArr = [new File([blob], "MyLineup.png", { type: blob.type })];
   try {
     await navigator.share({
-      //   text: "Here's my lineup for the festival.",
       files: filesArr,
     });
     console.log("Shared successfully");
