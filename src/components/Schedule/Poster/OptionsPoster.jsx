@@ -14,7 +14,7 @@ function OptionsPoster({ setter }) {
   return (
     <div className="mr-2 flex items-center">
       <div onClick={() => setter("schedule")} className=" md:flex btn btn-sm btn-outline text-white bg-[#00b3f0]">
-        Shedule
+        Schedule
       </div>
       <div onClick={() => handleDownload(downloadPoster)} className="hidden md:flex btn btn-sm btn-outline text-white bg-[#00b3f0]">
         Share
