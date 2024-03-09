@@ -1,7 +1,8 @@
 import { toPng, toBlob } from "html-to-image";
 import download from "downloadjs";
 
-export async function shareSchedule(url) {
+export async function shareSchedule() {
+  const url = window.location;
   try {
     await navigator.share({
       title: " My Schedule",
@@ -21,6 +22,7 @@ export async function createImage(item, callback) {
 }
 
 export async function createBlob(item, callback) {
+  await toBlob(document.getElementById(item));
   await toBlob(document.getElementById(item));
   await toBlob(document.getElementById(item)).then(function (blob) {
     callback(blob);

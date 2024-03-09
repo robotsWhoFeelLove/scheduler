@@ -5,29 +5,40 @@ export default {
     extend: {
       fontFamily: {
         anta: ['"Anta"', "sans"],
+        start: ['"Press Start 2P"', "system-ui"],
       },
     },
   },
-  plugins: [require("daisyui")],
-  // daisyui: {
-  //   themes: [
-  //     {
-  //       light: {
-  //         "color-scheme": "light",
-  //         primary: "#1cb6dc",
-  //         secondary: "oklch(69.71% 0.329 342.55)",
-  //         "secondary-content": "oklch(98.71% 0.0106 342.55)",
-  //         accent: "oklch(76.76% 0.184 183.61)",
-  //         neutral: "#2B3440",
-  //         "neutral-content": "#D7DDE4",
-  //         "base-100": "oklch(100% 0 0)",
-  //         "base-200": "#F2F2F2",
-  //         "base-300": "#E5E6E6",
-  //         "base-content": "#1f2937",
-  //       },
-  //     },
-  //   ],
-  // },
+  plugins: [require("daisyui"), require("tailwindcss-animated")],
+  daisyui: {
+    themes: [
+      {
+        dark: {
+          primary: "#793ef9",
+          "primary-focus": "#570df8",
+          "primary-content": "#ffffff",
+          secondary: "#f000b8",
+          "secondary-focus": "#bd0091",
+          "secondary-content": "#ffffff",
+          accent: "#37cdbe",
+          "accent-focus": "#2aa79b",
+          "accent-content": "#ffffff",
+          neutral: "#2a2e37",
+          "neutral-focus": "#16181d",
+          "neutral-content": "#ffffff",
+          "base-100": "#3d4451",
+          "base-200": "#2a2e37",
+          "base-300": "#16181d",
+          "base-content": "#ebecf0",
+          info: "#66c6ff",
+          success: "#87d039",
+          warning: "#e2d562",
+          error: "#ff6f6f",
+        },
+      },
+      "light",
+    ],
+  },
   // use below if you need animation package.
   // run this in terminal: npm install -D tailwindcss-animated
   //uncomment below plugins, comment out above plugins

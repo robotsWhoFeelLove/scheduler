@@ -5,9 +5,10 @@ import BandCard from "./BandCard";
 import DayTabs from "../Selector/DayTabs";
 import Poster from "./Poster/Poster";
 import { shareSchedule } from "../../utils/services";
-import NavBar from "../../utils/NavBar";
+import NavBar from "../NavBar/NavBar";
 import OptionsPoster from "./Poster/OptionsPoster";
 import OptionsSchedule from "./OptionsSchedule";
+import Banner from "../../utils/Banner";
 
 function Schedule() {
   const routeParams = useParams();
@@ -32,6 +33,7 @@ function Schedule() {
 
   return (
     <>
+      <Banner />
       <NavBar Options={category == "schedule" ? OptionsSchedule : OptionsPoster} setter={setCategory} />
       {category == "schedule" && (
         <>

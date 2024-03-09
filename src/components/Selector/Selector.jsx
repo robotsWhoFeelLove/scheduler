@@ -8,9 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../../utils/useStorage";
 import ModalPrevious from "./ModalPrevious";
 import Schedule from "../Schedule/Schedule";
-import NavBar from "../../utils/NavBar";
+import NavBar from "../NavBar/NavBar";
 import OptionsSelector from "./OptionsSelector";
 import { cloneThing } from "../../utils/functions";
+import Banner from "../../utils/Banner";
 
 const TIMESLOTS = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5];
 
@@ -19,19 +20,12 @@ let localSchedule = cloneThing(schedule);
 function Selector() {
   const [active, setActive] = useState("Friday");
   const [scheduler, setScheduler] = useState(localSchedule);
-  // const [prev, setPrev, removePrev] = useLocalStorage("data", "");
   const navigate = useNavigate();
-
-  // function deleteExistingSchedule() {
-  //   setScheduler("");
-  // }
 
   function handleSchedule(day, slot, val) {
     let newSchedule = { ...scheduler };
     newSchedule[day]["s" + slot] = val;
-    console.log({ newSchedule });
     setScheduler(newSchedule);
-    // setPrev(newSchedule);
   }
 
   function isEmpty() {
@@ -39,7 +33,6 @@ function Selector() {
   }
 
   function goToSchedule() {
-    const test = isEmpty();
     if (isEmpty()) return;
     let mySlots = [];
     Object.values(scheduler).map((day) => {
@@ -52,20 +45,11 @@ function Selector() {
 
   return (
     <>
-      <NavBar setter={setScheduler} />
+      <Banner />
+      <NavBar setter={goToSchedule} Options={OptionsSelector} scheduler={scheduler} />
       <div className="p-5 ">
-        <div
-          className={
-            "w-full btn btn-outline my-2 " +
-            (Object.values(scheduler.Friday).filter((el) => el != null) + Object.values(scheduler.Saturday).filter((el) => el != null) == 0 &&
-              "bg-slate-300")
-          }
-          onClick={goToSchedule}
-        >
-          Go to Schedule
-        </div>
         <DayTabs active={active} setter={setActive} />
-        <div>
+        <div className="mb-20">
           {TIMESLOTS.map((el, i) => {
             return (
               <div className="pointer-none" key={"time" + el + i}>

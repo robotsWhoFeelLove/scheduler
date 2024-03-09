@@ -7,11 +7,6 @@ function SlotContent({ day, time, setter }) {
 
   return (
     <div>
-      {/* {bands
-        .filter((el) => {
-          return el.time == time && el.day == day;
-        }) */}
-
       {filterTime(bands, time, day).map((band, i) => {
         return (
           <div
