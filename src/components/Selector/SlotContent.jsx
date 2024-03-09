@@ -10,7 +10,7 @@ function SlotContent({ day, time, setter }) {
       {filterTime(bands, time, day).map((band, i) => {
         return (
           <div
-            className={"flex items-center btn  btn-outline m-2 " + (band == local && " btn-active")}
+            className={"flex items-center btn  btn-outline m-2  " + (band == local && " btn-active")}
             key={band.name + i}
             onClick={() => {
               if (local == band) {
@@ -22,7 +22,7 @@ function SlotContent({ day, time, setter }) {
               }
             }}
           >
-            <div className="text-lg font-bold ">{band.name} </div>
+            <div className="text-lg font-bold  ">{band.name} </div>
             <div>{"@" + band.venue}</div>
           </div>
         );

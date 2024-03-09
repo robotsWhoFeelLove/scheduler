@@ -48,11 +48,13 @@ function Selector() {
       <Banner />
       <NavBar setter={goToSchedule} Options={OptionsSelector} scheduler={scheduler} />
       <div className="p-5 ">
-        <DayTabs active={active} setter={setActive} />
-        <div className="mb-20">
+        <div className="z-40">
+          <DayTabs active={active} setter={setActive} />
+        </div>
+        <div className="mb-20 ">
           {TIMESLOTS.map((el, i) => {
             return (
-              <div className="pointer-none" key={"time" + el + i}>
+              <div className="pointer-none " key={"time" + el + i}>
                 <TimeSlot time={el} day={active} scheduler={handleSchedule} />
               </div>
             );

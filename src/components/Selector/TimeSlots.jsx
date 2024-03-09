@@ -6,7 +6,7 @@ function TimeSlot({ time, day, scheduler }) {
   //   const m = (time % hr) * 60;
 
   return (
-    <div className="join join-vertical w-full">
+    <div className="join join-vertical w-full ">
       <div className="collapse collapse-arrow join-item border border-base-300">
         <input type="radio" name="my-accordion-4" defaultChecked />
         <div className="collapse-title text-xl font-medium">{getTime(time)}</div>
