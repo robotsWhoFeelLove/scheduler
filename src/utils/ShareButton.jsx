@@ -1,11 +1,11 @@
 function ShareButton({ fill }) {
   return (
     <>
-      <div className="flex justify-center" >
+      <div className="flex justify-center">
         <svg
           width={"130px"}
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           version="1.1"
           x="0px"
           y="0px"

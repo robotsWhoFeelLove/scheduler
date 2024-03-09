@@ -1,8 +1,9 @@
 import GoBack from "../../utils/GoBack";
 import { shareSchedule } from "../../utils/services";
+import Spotlight from "../Tour/Spotlight";
 import ShareModal from "./Poster/ShareModal";
 
-function OptionsSchedule({ setter }) {
+function OptionsSchedule({ setter, tourIndex, handleTour }) {
   return (
     <>
       <ShareModal handler={shareSchedule} shareText={"Share a link to your schedule."} />

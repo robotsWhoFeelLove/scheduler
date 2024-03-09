@@ -1,8 +1,9 @@
 import { useState } from "react";
+import Spotlight from "../Tour/Spotlight";
 
-function DayTabs({ setter, active }) {
+function DayTabs({ setter, active, tourIndex, handleTour }) {
   return (
-    <div role="tablist" className="z-50 tabs tabs-boxed fixed bottom-14 right-4">
+    <div role="tablist" className="z-300 tabs tabs-boxed fixed bottom-14 right-4">
       <a role="tab" className={"tab " + (active == "Friday" && "tab-info text-white bg-info")} onClick={() => setter("Friday")}>
         Friday
       </a>
