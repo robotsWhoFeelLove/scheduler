@@ -7,7 +7,7 @@ function NavBar({ Options, setter, scheduler }) {
         <div className="h-14 ">
           <Logo fillColor="#ffffff" height="100px" width="100px" />
         </div>
-        {Options && <Options setter={setter} scheduler={scheduler} />}
+        <div className="mr-6">{Options && <Options setter={setter} scheduler={scheduler} />}</div>
       </nav>
     </>
   );

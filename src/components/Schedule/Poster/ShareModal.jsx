@@ -2,6 +2,8 @@ import Heart from "../../../utils/Heart";
 import FaceBook from "../../../utils/FaceBook";
 import Message from "../../../utils/Message";
 import { FacebookShareButton } from "react-share";
+import Insta from "../../../utils/Insta";
+import ShareButton from "../../../utils/ShareButton";
 const url = window.location;
 function ShareModal({ handler, shareText }) {
   return (
@@ -16,17 +18,14 @@ function ShareModal({ handler, shareText }) {
         </div>
         <p className="py-4 font-start">SHARE WITH ONE OF THESE...</p>
         <div className="bg-slate-200  p-2">
-          <div className="flex items-center justify-between">
-            <div className="text-xs text-[#333333] font-start">Share a link to you schedule on Facebook</div>
-            <FacebookShareButton url={url} quote={"Check out my Festival Lineup"} hashtag="#hamtramckBlowout">
-              <FaceBook />
-            </FacebookShareButton>
+          <div className="flex items-center justify-around">
+            <Insta />
+            <FaceBook />
+            <Message />
           </div>
-          <div className="flex items-center justify-between">
-            <div className="text-xs text-[#333333] font-start">{shareText}</div>
-            <div onClick={() => handler()}>
-              <Message />
-            </div>
+          <div className="text-xs text-[#333333] font-start text-center mt-2">{shareText}</div>
+          <div className="mt-4" onClick={() => handler()}>
+            <ShareButton fill={"#333333"} />
           </div>
         </div>
         <div className="modal-action">

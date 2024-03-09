@@ -5,8 +5,8 @@ import ShareModal from "./Poster/ShareModal";
 function OptionsSchedule({ setter }) {
   return (
     <>
-      <ShareModal handler={shareSchedule} shareText={"Share via text"} />
-      <div className="flex w-screen justify-end gap-2 items-center m-2">
+      <ShareModal handler={shareSchedule} shareText={"Share a link to your schedule."} />
+      <div className="flex  justify-end gap-8 items-center m-2">
         <div className="-mr-2.5 -mt-1">
           <GoBack />
         </div>
