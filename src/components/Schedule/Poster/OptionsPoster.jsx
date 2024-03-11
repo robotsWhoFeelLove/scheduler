@@ -19,6 +19,12 @@ function OptionsPoster({ setter, tourIndex, handleTour }) {
     createBlob("poster", sharePoster);
   }
 
+  async function handleDesktopDownload() {
+    await createImage("poster", (item) => {
+      download(item, "MyLineup.png", "image/png");
+    });
+  }
+
   return (
     <>
       <div className="mr-2 flex items-center gap-6">
@@ -26,7 +32,7 @@ function OptionsPoster({ setter, tourIndex, handleTour }) {
         Schedule
       </div> */}
         {tourIndex == 5 && (
-          <div className="-mt-6 -ml-9 z-50 pinhole w-[100px] h-[100px] rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
+          <div className="cursor-pointer -mt-6 -ml-9 z-50 pinhole w-[100px] h-[100px] rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
             <div onClick={() => handleTour()} className=" z-50  w-[130px] h-[130px] rounded-full "></div>
           </div>
         )}
@@ -35,7 +41,7 @@ function OptionsPoster({ setter, tourIndex, handleTour }) {
         </div>
 
         {tourIndex == 6 && (
-          <div className="-mt-6 ml-8 z-50 pinhole w-[100px] h-[100px] rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
+          <div className="cursor-pointer -mt-6 ml-8 z-50 pinhole w-[100px] h-[100px] rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
             <div onClick={() => handleTour()} className=" z-50  w-[130px] h-[130px] rounded-full "></div>
           </div>
         )}
@@ -46,13 +52,18 @@ function OptionsPoster({ setter, tourIndex, handleTour }) {
           Share
         </div> */}
         {tourIndex == 4 && (
-          <div className="-mt-6 ml-24 z-50 pinhole w-[100px] h-[100px] rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
+          <div className="cursor-pointer -mt-6 ml-24 z-50 pinhole w-[100px] h-[100px] rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear">
             <div onClick={() => handleTour()} className=" z-50  w-[130px] h-[130px] rounded-full "></div>
           </div>
         )}
         <ShareIcon />
       </div>
-      <ShareModal handler={handleShare} shareText={"Share or save your Poster Image"} />
+      <ShareModal
+        message={"Downloading your poster!"}
+        handler={handleShare}
+        desktopHandler={handleDesktopDownload}
+        shareText={"Share or save your Poster Image"}
+      />
     </>
   );
 }

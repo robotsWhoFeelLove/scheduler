@@ -1,6 +1,6 @@
 function PosterIcon({ setter }) {
   return (
-    <div className="-mr-3 mt-2" onClick={() => setter("poster")}>
+    <div className="-mr-3 mt-2 cursor-pointer" onClick={() => setter("poster")}>
       <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" x="0px" y="0px">
         <g data-name="27-proster">
           <path

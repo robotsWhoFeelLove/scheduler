@@ -1,7 +1,7 @@
 function ShareButton({ fill }) {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center cursor-pointer">
         <svg
           width={"130px"}
           xmlns="http://www.w3.org/2000/svg"

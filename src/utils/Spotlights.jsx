@@ -4,12 +4,24 @@ function Spotlights({ tourIndex, handleTour }) {
   return (
     <>
       {tourIndex == 1 && (
-        <Spotlight
-          text="Switch days by tapping the tabs"
-          pinholeClasses={" bottom-0 right-0"}
-          textClasses={" bottom-28 right-28"}
-          setter={handleTour}
-        />
+        <div className="md:hidden">
+          <Spotlight
+            text="Switch days by tapping the tabs"
+            pinholeClasses={" bottom-0 right-0"}
+            textClasses={" bottom-28 right-28"}
+            setter={handleTour}
+          />
+        </div>
+      )}
+      {tourIndex == 1 && (
+        <div className="hidden md:flex">
+          <Spotlight
+            text="Your Schedule will appear here."
+            pinholeClasses={" bottom-0 right-0"}
+            textClasses={"top-[30%] left-[30%]"}
+            setter={handleTour}
+          />
+        </div>
       )}
       {tourIndex == 2 && (
         <Spotlight

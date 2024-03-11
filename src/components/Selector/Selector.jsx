@@ -51,7 +51,7 @@ function Selector() {
         <div className="z-40">
           <DayTabs active={active} setter={setActive} />
         </div>
-        <div className="mb-20 ">
+        <div className="mb-20 md:hidden">
           {TIMESLOTS.map((el, i) => {
             return (
               <div className="pointer-none " key={"time" + el + i}>
@@ -60,8 +60,31 @@ function Selector() {
             );
           })}
         </div>
+        <div className="hidden md:flex w-screen justify-around">
+          <div className="mb-20 hidden md:flex md:flex-col   min-w-[400px] w-[800px]">
+            <h2 className="font-anta text-3xl m-2">Friday</h2>
+            {TIMESLOTS.map((el, i) => {
+              return (
+                <div className="pointer-none " key={"time" + el + i}>
+                  <TimeSlot time={el} day={"Friday"} scheduler={handleSchedule} />
+                </div>
+              );
+            })}
+          </div>
+          <div className="mb-20 hidden md:flex md:flex-col min-w-[400px] w-[800px]">
+            <h2 className="font-anta text-3xl m-2">Saturday</h2>
+            {TIMESLOTS.map((el, i) => {
+              return (
+                <div className="pointer-none " key={"time" + el + i}>
+                  <TimeSlot time={el} day={"Saturday"} scheduler={handleSchedule} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
         {/* <ModalPrevious prev={prev} remove={removePrev} setter={setScheduler} /> */}
       </div>
+      <div className="text-slate-500 mt-20 text-xs ml-10">{"© Ian Lee Lamb " + new Date().getFullYear()}</div>
     </>
   );
 }

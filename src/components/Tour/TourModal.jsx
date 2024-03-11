@@ -1,4 +1,4 @@
-function TourModal({ setter }) {
+function TourModal({ setter, loadBands }) {
   return (
     <div>
       <dialog id="tour-modal" className="modal">
@@ -11,7 +11,9 @@ function TourModal({ setter }) {
               <button className="btn" onClick={() => setter()}>
                 Yes
               </button>
-              <button className="btn">No</button>
+              <button onClick={() => loadBands()} className="btn">
+                No
+              </button>
             </form>
           </div>
         </div>

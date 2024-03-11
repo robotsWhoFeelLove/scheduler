@@ -1,7 +1,7 @@
 function Banner() {
   return (
-    <div className="overflow-x-hidden -ml-[300px] bg-gradient-to-b from-[#878787] to-[#eeaf61]">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1545.23 109.51" width="1000px">
+    <div className="overflow-x-hidden -ml-[300px] md:ml-0 bg-gradient-to-b from-[#878787] to-[#eeaf61] ">
+      <svg className="-mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1545.23 109.51" width="100%">
         <g id="a" />
         <g id="b">
           <path

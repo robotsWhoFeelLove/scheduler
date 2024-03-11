@@ -1,11 +1,14 @@
 import Heart from "../../../utils/Heart";
 import FaceBook from "../../../utils/FaceBook";
 import Message from "../../../utils/Message";
-import { FacebookShareButton } from "react-share";
 import Insta from "../../../utils/Insta";
 import ShareButton from "../../../utils/ShareButton";
+import { useState } from "react";
+
 const url = window.location;
-function ShareModal({ handler, shareText }) {
+function ShareModal({ handler, shareText, desktopHandler, message }) {
+  const [completed, setCompleted] = useState(false);
+
   return (
     <dialog id="share-modal" className="modal">
       <div className="modal-box w-11/12 max-w-5xl">
@@ -23,8 +26,17 @@ function ShareModal({ handler, shareText }) {
             <FaceBook />
             <Message />
           </div>
-          <div className="text-xs text-[#333333] font-start text-center mt-2">{shareText}</div>
-          <div className="mt-4" onClick={() => handler()}>
+          <div className="text-xs text-[#333333] font-start text-center mt-2">{completed ? message : shareText}</div>
+          <div className="mt-4 md:hidden" onClick={() => handler()}>
+            <ShareButton fill={"#333333"} />
+          </div>
+          <div
+            className="mt-4 hidden md:block"
+            onClick={() => {
+              setCompleted(true);
+              desktopHandler();
+            }}
+          >
             <ShareButton fill={"#333333"} />
           </div>
         </div>
