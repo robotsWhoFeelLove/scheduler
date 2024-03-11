@@ -11,6 +11,7 @@ import OptionsSchedule from "./OptionsSchedule";
 import Banner from "../../utils/Banner";
 import TourModal from "../Tour/TourModal";
 import Spotlight from "../Tour/Spotlight";
+import Spotlights from "../../utils/Spotlights";
 
 function Schedule() {
   const routeParams = useParams();
@@ -37,6 +38,11 @@ function Schedule() {
 
   function handleTour() {
     if (tourIndex == 3) setCategory("poster");
+    if (tourIndex == 6) {
+      setCategory("schedule");
+      setTourIndex(0);
+      return;
+    }
     setTourIndex((x) => {
       console.log({ x });
       return x + 1;
@@ -45,42 +51,7 @@ function Schedule() {
 
   return (
     <>
-      {tourIndex == 1 && (
-        <Spotlight
-          text="Switch days by tapping the tabs"
-          pinholeClasses={" bottom-0 right-0"}
-          textClasses={" bottom-28 right-28"}
-          setter={handleTour}
-        />
-      )}
-      {tourIndex == 2 && (
-        <Spotlight
-          text="Share a link to your schedule with others"
-          pinholeClasses={" -bottom-14 -right-2"}
-          textClasses={" bottom-28 right-28"}
-          setter={handleTour}
-        />
-      )}
-      {tourIndex == 3 && (
-        <Spotlight text="Or check out your poster." pinholeClasses={" -bottom-14 right-12"} textClasses={" bottom-28 right-28"} setter={handleTour} />
-      )}
-      {tourIndex == 4 && (
-        <Spotlight
-          text="You can also share an image of your poster."
-          pinholeClasses={" -bottom-14 -right-2"}
-          textClasses={" bottom-28 right-28"}
-          setter={handleTour}
-        />
-      )}
-      {tourIndex == 5 && (
-        <Spotlight
-          text="Or go back and recreate your schedule from scratch."
-          pinholeClasses={" -bottom-14 right-28"}
-          textClasses={" bottom-28 right-28"}
-          setter={handleTour}
-        />
-      )}
-
+      <Spotlights tourIndex={tourIndex} handleTour={handleTour} />
       <TourModal setter={handleTour} />
       <Banner />
       <NavBar Options={category == "schedule" ? OptionsSchedule : OptionsPoster} setter={setCategory} tourIndex={tourIndex} handleTour={handleTour} />

@@ -8,7 +8,7 @@ function Spotlight({ setter, text, pinholeClasses, textClasses }) {
           {text}
         </div>
       </div>
-      <div className="">
+      {/* <div className="">
         <div
           className={
             "fixed pinhole  z-40 w-[130px] h-[130px] rounded-full animate-fade-up animate-once animate-duration-[800ms] animate-ease-linear " +
@@ -17,7 +17,7 @@ function Spotlight({ setter, text, pinholeClasses, textClasses }) {
         >
           <div onClick={() => setter()} className="rounded-full text-center  text-[#333333] text-lg w-36 h-36"></div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
