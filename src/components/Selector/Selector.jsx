@@ -48,7 +48,7 @@ function Selector() {
       <Banner />
       <NavBar setter={goToSchedule} Options={OptionsSelector} scheduler={scheduler} />
       <div className="p-5 ">
-        <div className="z-40">
+        <div className="z-40 md:hidden">
           <DayTabs active={active} setter={setActive} />
         </div>
         <div className="mb-20 md:hidden">
